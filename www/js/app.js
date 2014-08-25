@@ -14,7 +14,7 @@ angular.module('directory', ['ionic', 'forceng', 'directory.controllers'])
             oauthPlugin.getAuthCredentials(
                 function (creds) {
                     // Initialize ForceTK client
-                    force.init({accessToken: creds.accessToken, instanceURL: creds.instanceUrl});
+                    force.init({accessToken: creds.accessToken, instanceURL: creds.instanceUrl, refreshToken: creds.refreshToken});
                     $state.go('search');
                 },
                 function (error) {

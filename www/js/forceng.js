@@ -55,7 +55,7 @@ angular.module('forceng', [])
                 appId = params.appId;
             }
             if (params.accessToken) {
-                oauth = {access_token: params.accessToken, instance_url: params.instanceURL};
+                oauth = {access_token: params.accessToken, instance_url: params.instanceURL, refresh_token: params.refreshToken};
             }
             apiVersion = params.apiVersion || apiVersion;
             proxyURL = params.proxyURL || proxyURL;
@@ -76,8 +76,6 @@ angular.module('forceng', [])
          * Login to Salesforce using OAuth. If running in a Browser, the OAuth workflow happens in a a popup window.
          * If running in Cordova container, it happens using the In-App Browser. Don't forget to install the In-App Browser
          * plugin in your Cordova project: cordova plugins add org.apache.cordova.inappbrowser.
-         * @param success - function to call back when login succeeds
-         * @param error - function to call back when login fails
          */
         function login() {
 
